@@ -1,3 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$white: #ffffff;
+$gray: #6f6f6f;
+$red: #c41417;
+
 body {
   margin: 0;
   font-family: "Prompt", sans-serif;
@@ -6,20 +14,115 @@ body {
 html,
 body,
 #root {
+  position: relative;
   height: 100%;
 }
 
+body{
+  background-image: url(./assets/images/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  z-index: 99;
+}
+
+img{
+  width: 50%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 .app {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+
 .container {
   width: 90%;
   height: 90vh;
+  padding: 20px;
   background-color: white;
   border-radius: 20px;
   margin-top: 40px;
+  text-align: center;
+}
+
+.title{
+  font-size: 37px;
+  color: #383838;
+  transition: all .5s;
+}
+
+input {
+  height: 60px;
+  color: #4e4e4e;
+  border: 3px solid lightgray;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 34px;
+  transition: all .5s;
+}
+
+a{
+  display: flex;
+  text-align: center;
+}
+
+button a{
+  padding: 15px 30px;
+}
+
+button{
+  display: block;
+  position: relative;
+  bottom: -10px;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 26px;
+  color: $white;
+  border-radius: 10px;
+  background-image: radial-gradient(ellipse farthest-corner at top left, #c41417 0%, #b31315 100%);
+  transition: all .5s;
+
+  &.primary{
+    padding: 15px 30px;
+  }
+  &.hide{
+    visibility:hidden;
+    opacity: 0;
+  }
+  &.show{
+    bottom: 0;
+    opacity: 1;
+    visibility:visible;
+  }
+  &.submit{
+
+  }
+  &.second{
+    color: $gray;
+    background-image: none;
+
+    &:hover{
+      color: $red;
+    } 
+  }
+  // txt
+  &:hover{
+    transform: scale(1.1);
+  }
 }
